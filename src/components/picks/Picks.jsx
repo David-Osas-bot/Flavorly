@@ -2,7 +2,7 @@
 import IMG1 from "../../assets/imgFour.jpg";
 import IMG2 from "../../assets/imgOne.jpg";
 import IMG3 from "../../assets/imgThree.jpg";
-import IMG4 from "../../assets/imgTwo.jpg";
+import IMG4 from "../../assets/ImgTwo.jpg";
 
 import { FaStar } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
