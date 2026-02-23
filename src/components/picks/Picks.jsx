@@ -1,89 +1,115 @@
+// Picks.jsx
 import IMG1 from "../../assets/imgFour.jpg";
 import IMG2 from "../../assets/imgOne.jpg";
 import IMG3 from "../../assets/imgThree.jpg";
 import IMG4 from "../../assets/imgTwo.jpg";
+
 import { FaStar } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
 
-
-const data = [
+const picksData = [
   {
-    Image: IMG4,
+    image: IMG4,
+    badge: "Bestseller",
+    badgeColor: "bg-orange-500",
     name: "Smash Burger",
     price: "$12.99",
-    rate: "4.9",
+    rating: "4.9",
     time: "25 min",
-    Icon: FaStar,
-    Icon2: LuDot
   },
-
   {
-    Image: IMG2,
+    image: IMG2,
+    badge: "Healthy",
+    badgeColor: "bg-green-500",
     name: "Salmon Poké Bowl",
     price: "$15.49",
-    rate: "4.8",
+    rating: "4.8",
     time: "15 min",
-    Icon: FaStar,
-    Icon2: LuDot
   },
-
   {
-    Image: IMG3,
+    image: IMG3,
+    badge: "Classic",
+    badgeColor: "bg-blue-500",
     name: "Margherita Pizza",
     price: "$14.99",
-    rate: "4.7",
+    rating: "4.7",
     time: "30 min",
-    Icon: FaStar,
-    Icon2: LuDot
   },
-
   {
-    Image: IMG1,
+    image: IMG1,
+    badge: "Sweet",
+    badgeColor: "bg-purple-500",
     name: "Chocolate Lava Cake",
     price: "$8.99",
-    rate: "4.9",
+    rating: "4.9",
     time: "20 min",
-    Icon: FaStar,
-    Icon2: LuDot
   },
-
-]
+];
 
 const Picks = () => {
   return (
-    <div className='w-full h-[850px] bg-[hsl(30,15%,95%)] p-8 flex flex-col'>
-      <span className="text-xl ml-[20px] font-medium mt-[100px] text-[#F97316]">TOP PICKS</span>
-      <span className="mt-6 text-6xl font-serif font-bold ml-[20px]">Popular Right Now</span>
+    <section className="w-full bg-[hsl(30,15%,95%)] py-16 md:py-20">
+      {/* Wider container – feels ~full-width on most laptops */}
+      <div className="max-w-screen-3xl mx-auto px-5 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header */}
+        <div className="mb-10 md:mb-14">
+          <p className="text-xl md:text-2xl font-medium text-[#F97316] uppercase tracking-wide">
+            TOP PICKS
+          </p>
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900">
+              Popular Right Now
+            </h2>
+            <a
+              href="#"
+              className="text-[#F97316] font-medium hover:underline flex items-center gap-1 text-lg whitespace-nowrap"
+            >
+              View All →
+            </a>
+          </div>
+        </div>
 
-      <main className="flex flex-row justify-evenly mt-20">
-        {
-          data.map(({Image, name, price, rate, time, Icon, Icon2}) => { 
-            return (
-              <div className="w-[370px] h-[400px] rounded-xl bg-white border-gray-300">
-                <div>
-                  <img src={Image} alt={Image} className="h-[250px] object-cover w-full rounded-tl-xl rounded-tr-xl" />
-                </div>
-
-                <div className="m-4 w-[80%] m-auto mt-5 flex flex-row">
-                  <Icon className="text-xl text-orange-400 mr-[10px]"></Icon>
-                  <span className="font-semibold font-display">{rate}</span>
-                   <Icon2 className="text-gray-500 mt-1 ml-2 font-bold"></Icon2>
-                   <span className="text-gray-400 font-semibold ml-[15px] text-[15px]">{time}</span>
-                </div>
-
-                <div className="ml-10">
-                  <span className="text-[25px] font-serif font-semibold">{name}</span>
-                </div>
-
-                <div className="ml-10">
-                  <span className="text-[25px] text-orange-400 font-bold">{price}</span>
-                </div>
+        {/* Grid – 4 columns on wide laptops */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+          {picksData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200 flex flex-col"
+            >
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-56 md:h-64 lg:h-72 object-cover"
+                />
+                <span
+                  className={`absolute top-4 left-4 px-3 py-1.5 text-xs md:text-sm font-semibold text-white rounded-full ${item.badgeColor}`}
+                >
+                  {item.badge}
+                </span>
               </div>
-            )
-          })
-        }
-      </main>
-    </div>
+
+              <div className="p-5 md:p-6 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 mb-3 text-sm md:text-base">
+                  <FaStar className="text-[#F97316] text-lg md:text-xl" />
+                  <span className="font-semibold text-gray-800">{item.rating}</span>
+                  <LuDot className="text-gray-400 text-2xl -mx-1.5" />
+                  <span className="text-gray-600 font-medium">{item.time}</span>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-serif font-semibold text-gray-900 mb-1.5 line-clamp-2">
+                  {item.name}
+                </h3>
+
+                <p className="mt-auto text-2xl md:text-3xl font-bold text-[#F97316]">
+                  {item.price}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,75 +1,95 @@
-import { div } from "framer-motion/client";
+// About.jsx
 import { RiDoubleQuotesR } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
 
-
-const data = [
+const testimonials = [
   {
-    testimony: "The quality is unmatched! Every meal arrives hot, fresh, and exactly as pictured. Flavorly has completely changed how I eat.",
-    Icon: FaStar,
+    testimony:
+      "The quality is unmatched! Every meal arrives hot, fresh, and exactly as pictured. Flavorly has completely changed how I eat.",
     name: "Sarah M.",
     role: "Food Enthusiast",
-    logo: "S"
+    logo: "S",
   },
-
   {
-    testimony: "Lightning-fast delivery and the restaurant selection is incredible. I've discovered so many amazing local spots through this app.",
-    Icon: FaStar,
+    testimony:
+      "Lightning-fast delivery and the restaurant selection is incredible. I've discovered so many amazing local spots through this app.",
     name: "James L.",
     role: "Busy Professional",
-    logo: "J"
+    logo: "J",
   },
-
   {
-    testimony: "Love the healthy options available! The nutritional info on every meal makes it so easy to stay on track with my goals.",
-    Icon: FaStar,
+    testimony:
+      "Love the healthy options available! The nutritional info on every meal makes it so easy to stay on track with my goals.",
     name: "Emily R.",
     role: "Health Coach",
-    logo: "E"
-  }
-]
+    logo: "E",
+  },
+];
 
 const About = () => {
   return (
-    <div className='w-full h-[900px] bg-[hsl(30,15%,95%)] p-6' id="about">
-      <span className="text-xl font-medium flex justify-center mt-[100px] text-[#F97316]">TESTIMONIALS</span>
-      <span className="flex justify-center mt-6 text-6xl font-serif font-bold">Loved by Foodies</span>
+    <section
+      className="w-full bg-[hsl(30,15%,95%)] py-16 md:py-20 px-5 sm:px-6 lg:px-8"
+      id="about"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-lg sm:text-xl font-medium text-[#F97316] uppercase tracking-wide">
+            TESTIMONIALS
+          </p>
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-gray-900">
+            Loved by Foodies
+          </h2>
+        </div>
 
-      <main className="w-[80%] m-auto flex flex-row mt-20 justify-evenly">
-        {
-          data.map(({ testimony, Icon, name, role, logo }) => {
-            return (
-              <div className="w-[400px] h-[350px] bg-[hsl(30,20%,97%)] border border-red-200 rounded-3xl">
-                <div className="w-[80%] m-auto h-[300px] mt-10 ">
-                  <RiDoubleQuotesR className="text-[35px] text-orange-300" />
-                  <br />
-                  <span className="text-gray-500">"{testimony}"</span>
+        {/* Responsive Grid of Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          {testimonials.map(({ testimony, name, role, logo }, index) => (
+            <div
+              key={index}
+              className="
+                bg-[hsl(30,20%,97%)] rounded-3xl border border-orange-200/60 
+                p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300
+                flex flex-col
+              "
+            >
+              <RiDoubleQuotesR className="text-4xl md:text-5xl text-orange-300/80 mb-4 md:mb-6" />
 
-                  <div className="flex flex-row mt-10 w-[120px]">
-                    <Icon className="text-orange-400 text-[15px] mr-2" />
-                    <Icon className="text-orange-400 text-[15px] mr-2" />
-                    <Icon className="text-orange-400 text-[15px] mr-2" />
-                    <Icon className="text-orange-400 text-[15px] mr-2" />
-                    <Icon className="text-orange-400 text-[15px] mr-2" />
-                  </div>
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 flex-grow">
+                "{testimony}"
+              </p>
 
-                  <div className="w-[200px] h-[80px] flex flex-row">
-                    <div className="w-[50px] h-[50px] mt-5 bg-orange-100 rounded-[50%]">
-                      <span className="flex items-center flex-row justify-center pt-2 font-serif text-[20px] text-orange-500">{logo}</span>
-                    </div>
+              {/* Rating stars */}
+              <div className="flex mb-5 md:mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className="text-orange-400 text-lg md:text-xl"
+                  />
+                ))}
+              </div>
 
-                    <div className="grid grid-cols-1">
-                      <span className="text-black-300 font-semibold mt-5 ml-[10px]">{name}</span>
-                      <p className="text-gray-500 -mt-4 ml-[10px] text-[15px]">{role}</p>
-                    </div>
-                  </div>
+              {/* Author info */}
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <span className="font-serif text-xl md:text-2xl text-orange-500 font-bold">
+                    {logo}
+                  </span>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-base md:text-lg">
+                    {name}
+                  </h4>
+                  <p className="text-gray-500 text-sm md:text-base">{role}</p>
                 </div>
               </div>
-            )
-          })
-        }
-      </main>
-    </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
