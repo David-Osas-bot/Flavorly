@@ -52,8 +52,10 @@ const phoneNumber = "+2348081677861"; // Seller WhatsApp number
 const handleWhatsAppClick = (item) => {
   const message = `Hello, I'm interested in this item:
 
-    Item Name: ${item.name}
+    Item Name: ${item.name}<br/>
+    Image: ${item.image}
     Price: $${item.price}
+
 
     Please provide more details.`;
 
@@ -124,7 +126,7 @@ const Picks = () => {
                     {item.price}
                   </p>
 
-                  <button onClick={() => handleWhatsAppClick(item)}>
+                  <button onClick={() => handleWhatsAppClick(item)} className="w-[100px] h-[40px] text-white font-semibold cursor-pointer hover:bg-white hover:text-green-400 transition duration-300  rounded-xl bg-green-400">
                     Buy Now!
                   </button>
                 </div>
