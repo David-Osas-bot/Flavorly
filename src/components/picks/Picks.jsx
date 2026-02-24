@@ -1,4 +1,5 @@
 // Picks.jsx
+import React from "react";
 import IMG1 from "../../assets/imgFour.jpg";
 import IMG2 from "../../assets/imgOne.jpg";
 import IMG3 from "../../assets/imgThree.jpg";
@@ -45,6 +46,23 @@ const picksData = [
     time: "20 min",
   },
 ];
+
+const phoneNumber = "+2348081677861"; // Seller WhatsApp number
+
+const handleWhatsAppClick = (item) => {
+  const message = `Hello, I'm interested in this item:
+
+    Item Name: ${item.name}
+    Price: $${item.price}
+
+    Please provide more details.`;
+
+  const encodedMessage = encodeURIComponent(message);
+
+  const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
+};
 
 const Picks = () => {
   return (
@@ -101,9 +119,15 @@ const Picks = () => {
                   {item.name}
                 </h3>
 
-                <p className="mt-auto text-2xl md:text-3xl font-bold text-[#F97316]">
-                  {item.price}
-                </p>
+                <div className="flex flex-row justify-between items-center">
+                  <p className="mt-auto text-2xl md:text-3xl font-bold text-[#F97316]">
+                    {item.price}
+                  </p>
+
+                  <button onClick={() => handleWhatsAppClick(item)}>
+                    Buy Now!
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -112,5 +136,6 @@ const Picks = () => {
     </section>
   );
 };
+
 
 export default Picks;
