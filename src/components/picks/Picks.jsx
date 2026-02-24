@@ -52,7 +52,8 @@ const phoneNumber = "+2348081677861"; // Seller WhatsApp number
 const handleWhatsAppClick = (item) => {
   const message = `Hello, I'm interested in this item:
 
-    Item Name: ${item.name}<br/>
+    Item Name: ${item.name}
+    
     Price: $${item.price}
 
 
