@@ -20,7 +20,7 @@ const Menu = () => {
           <p className="text-lg sm:text-xl font-medium text-[#F97316] uppercase tracking-wide">
             CATEGORIES
           </p>
-          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-gray-900">
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-[] font-bold text-gray-900">
             Browse by Cuisine
           </h2>
         </div>

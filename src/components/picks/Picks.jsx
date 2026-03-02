@@ -77,7 +77,7 @@ const Picks = () => {
             TOP PICKS
           </p>
           <div className="mt-3 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-[] font-bold text-gray-900">
               Popular Right Now
             </h2>
             <a

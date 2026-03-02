@@ -19,7 +19,7 @@ const Home = () => {
 
         {/* Main heading + description */}
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Trebuchet_MS', 'Lucida Sans Unicode', sans-serif] font-bold text-white leading-tight">
             Savor Every{" "}
             <span className="text-[#F97316]">Moment</span>
           </h1>

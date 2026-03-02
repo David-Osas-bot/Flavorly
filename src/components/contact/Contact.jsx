@@ -19,7 +19,7 @@ const Contact = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white text-center mb-5 md:mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-[] font-bold text-white text-center mb-5 md:mb-6">
               Ready to Feast?
             </h2>
 
