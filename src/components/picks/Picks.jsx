@@ -1,14 +1,14 @@
 // Picks.jsx
 import React from "react";
-import IMG1 from "../../assets/imgFour.jpg";
-import IMG2 from "../../assets/imgOne.jpg";
-import IMG3 from "../../assets/imgThree.jpg";
-import IMG4 from "../../assets/ImgTwo.jpg";
+import IMG1 from "../../assets/cakeOne.png";
+import IMG2 from "../../assets/cakeTwo.png";
+import IMG3 from "../../assets/cakeThree.png";
+import IMG4 from "../../assets/cakeFour.png";
 
 import { FaStar } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
 
-const picksData = [
+export const picksData = [
   {
     image: IMG4,
     badge: "Bestseller",
@@ -49,7 +49,7 @@ const picksData = [
 
 const phoneNumber = "+2348081677861"; // Seller WhatsApp number
 
-const handleWhatsAppClick = (item) => {
+export const handleWhatsAppClick = (item) => {
   const message = `Hello, I'm interested in this item:
 
     Item Name: ${item.name}
@@ -68,21 +68,21 @@ const handleWhatsAppClick = (item) => {
 
 const Picks = () => {
   return (
-    <section className="w-full bg-[hsl(30,15%,95%)] py-16 md:py-20">
+    <section className="w-full bg-[hsl(30,15%,95%)] py-16 md:py-20" id="picks">
       {/* Wider container – feels ~full-width on most laptops */}
       <div className="max-w-screen-3xl mx-auto px-5 sm:px-6 lg:px-10 xl:px-12">
         {/* Header */}
         <div className="mb-10 md:mb-14">
           <p className="text-xl md:text-2xl font-medium text-[#F97316] uppercase tracking-wide">
-            TOP PICKS
+            TOP CAKES
           </p>
           <div className="mt-3 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-[] font-bold text-gray-900">
               Popular Right Now
             </h2>
             <a
-              href="#"
-              className="text-[#F97316] font-medium hover:underline flex items-center gap-1 text-lg whitespace-nowrap"
+              href="#pick2"
+              className="text-[#F97316] font-medium hover:underline flex items-center gap-1 text-sm whitespace-nowrap"
             >
               View All →
             </a>
@@ -90,7 +90,7 @@ const Picks = () => {
         </div>
 
         {/* Grid – 4 columns on wide laptops */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 cursor-pointer">
           {picksData.map((item, index) => (
             <div
               key={index}

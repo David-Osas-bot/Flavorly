@@ -5,7 +5,7 @@ import React from 'react';
 const Delivery = () => {
   return (
     <div className="w-full min-h-[700px] bg-[hsl(30,20%,97%)] px-5 py-12 md:py-20" id="delivery">
-      <div className="text-center">
+      <div className="text-center pt-10">
         <p className="text-xl font-medium text-[#F97316]">SIMPLE PROCESS</p>
         <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-[] font-bold text-gray-900">
           How It Works

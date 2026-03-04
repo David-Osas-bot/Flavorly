@@ -16,7 +16,7 @@ const Menu = () => {
     <section className="w-full bg-[hsl(30,20%,97%)] py-16 md:py-20 px-5 sm:px-6 lg:px-8" id="menu">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-14">
+        <div className="text-center mb-10 md:mb-14 pt-10">
           <p className="text-lg sm:text-xl font-medium text-[#F97316] uppercase tracking-wide">
             CATEGORIES
           </p>

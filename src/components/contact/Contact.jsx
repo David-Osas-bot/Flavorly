@@ -8,7 +8,7 @@ const Contact = () => {
       className="w-full bg-[hsl(30,20%,97%)] py-16 md:py-20 lg:py-24 px-5 sm:px-6 lg:px-8"
       id="contact"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-10">
         <div className="bg-[#F97316] rounded-3xl md:rounded-4xl overflow-hidden shadow-2xl">
           <div className="px-6 sm:px-10 md:px-16 lg:px-20 py-12 md:py-16 lg:py-20">
             {/* Icon */}

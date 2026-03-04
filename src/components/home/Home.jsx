@@ -1,11 +1,12 @@
 import bgImage from "../../assets/imgFive.jpg";
+import BlessingImg from "../../assets/blessingImg.png";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center pt-[170px]"
+      style={{ backgroundImage: `url(${BlessingImg})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/65 md:bg-black/70"></div>
@@ -25,34 +26,33 @@ const Home = () => {
           </h1>
 
           <p className="mt-5 md:mt-6 text-base sm:text-lg md:text-2xl text-gray-200 leading-relaxed max-w-2xl">
-            Discover restaurant-quality meals delivered fresh to your door. From local favorites to global cuisines.
+            Baking isn't just a skill, it's an art. We bring you the finest flavors, crafted with love and delivered to your doorstep. Experience the joy of every bite with us.
           </p>
         </div>
 
         {/* Buttons */}
         <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
-          <button
-            className="
-              group flex items-center justify-center gap-3 px-10 py-5 cursor-pointer
+          <a href="#picks" className="
+               group flex items-center justify-center gap-3 px-10 py-5 cursor-pointer
               bg-[#F97316] text-white font-semibold text-lg rounded-3xl 
               hover:bg-[#e55f00] transition-colors duration-300 shadow-md hover:shadow-lg
               min-w-[220px] md:min-w-[200px] md:min-h-[70px] rounded-4xl
-            "
-          >
+          ">
+
             Explore Menu
             <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
 
-          <button
-            className="
-              px-7 py-4 rounded-3xl font-semibold text-lg text-white 
-              bg-white/15 backdrop-blur-md border border-white/20
-              hover:bg-white/25 transition-all duration-300 cursor-pointer
+          <a href="#contact" className="
+              group flex items-center justify-center gap-3 px-10 py-5 cursor-pointer
+              bg-[#F97316] text-white font-semibold text-lg rounded-3xl bg-white/15 backdrop-blur-md border border-white/20
+              hover:bg-white/25 transition-colors duration-300 shadow-md hover:shadow-lg
               min-w-[220px] md:min-w-[200px] md:min-h-[70px] rounded-4xl
-            "
-          >
+          ">
+
             How It Works
-          </button>
+
+          </a>
         </div>
 
         {/* Stats */}

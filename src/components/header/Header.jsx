@@ -1,5 +1,6 @@
 // Header.jsx
 import React, { useState } from 'react';
+import GC from "../../assets/G-removebg-preview.png";
 import { HiMenu, HiX } from 'react-icons/hi'; // or use any icon library (heroicons, lucide, etc.)
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
       >
         {/* Logo */}
         <div className="text-2xl sm:text-3xl font-bold font-serif tracking-tight">
-          Flavor<span className="text-[#F97316]">ly</span>
+          <img src={GC} alt="GC_LogoImg" className='w-[80px] h-[60px]' />
         </div>
 
         {/* Desktop Nav + Button */}
@@ -33,18 +34,20 @@ const Header = () => {
             <a href="#contact" className="hover:text-[#F97316] transition-colors">Contact</a>
           </nav>
 
-          <button
-            className="
+          <a href="#picks">
+            <button
+              className="
               px-6 py-2.5 min-w-[140px]
               rounded-3xl bg-[#F97316] text-white font-semibold
               hover:bg-white hover:text-[#F97316] hover:border-[#F97316]
               border-2 border-transparent
               transition-all duration-300 ease-in-out
-              shadow-sm hover:shadow-md
+              shadow-sm hover:shadow-md cursor-pointer
             "
-          >
-            Order Now
-          </button>
+            >
+              Order Now
+            </button>
+          </a>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -86,21 +89,23 @@ const Header = () => {
 
           <nav className="flex flex-col gap-6 text-xl font-medium text-[#261E17]">
             <a href="#menu" className="hover:text-[#F97316]" onClick={toggleMenu}>Menu</a>
-            <a href="#" className="hover:text-[#F97316]" onClick={toggleMenu}>About</a>
+            <a href="#about" className="hover:text-[#F97316]" onClick={toggleMenu}>About</a>
             <a href="#delivery" className="hover:text-[#F97316]" onClick={toggleMenu}>Delivery</a>
-            <a href="#contact" className="hover:text-[#F97316]" onClick={toggleMenu}>Contact</a>
+            <a href="#contact" className="hover:text-[#F97316] mb-10" onClick={toggleMenu}>Contact</a>
           </nav>
 
-          <button
-            className="
+          <a href="#picks">
+            <button
+              className="
               mt-auto px-6 py-3.5 w-full rounded-3xl
               bg-[#F97316] text-white font-bold text-lg
-              hover:bg-[#e55f00] transition-colors
+              hover:bg-[#e55f00] transition-colors cursor-pointer
             "
-            onClick={toggleMenu}
-          >
-            Order Now
-          </button>
+              onClick={toggleMenu}
+            >
+              Order Now
+            </button>
+          </a>
         </div>
       </div>
     </header>

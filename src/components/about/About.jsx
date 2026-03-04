@@ -34,7 +34,7 @@ const About = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 pt-10">
           <p className="text-lg sm:text-xl font-medium text-[#F97316] uppercase tracking-wide">
             TESTIMONIALS
           </p>

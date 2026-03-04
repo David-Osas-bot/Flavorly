@@ -1,3 +1,6 @@
+import GC from "../../assets/G-removebg-preview.png";
+
+
 // Footer.jsx
 const Footer = () => {
   return (
@@ -16,8 +19,9 @@ const Footer = () => {
 
         {/* Logo */}
         <div className="text-2xl sm:text-3xl font-bold font-serif tracking-tight">
-          Flavor<span className="text-[#F97316]">ly</span>
+          <img src={GC} alt="GC_LogoImg" className='w-[80px] h-[60px]' />
         </div>
+
 
         {/* Navigation links */}
         <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-base sm:text-lg text-gray-600 font-medium">
